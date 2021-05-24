@@ -90,3 +90,23 @@ void concatena(char cadena1[], char cadena2[])
     }
 }
 // f) Modificar la cadena dada con la inserción de un carácter dado en una posición determinada.
+char insertarCaracter(char cadena, char caracter, int posicion)
+{
+    char *cadenaNueva;
+    int i = 0;
+    int j = 0;
+
+    while (i < largo(cadena))
+    {
+        if (i == posicion)
+        {
+            cadenaNueva[j] = caracter;
+            j++;
+        }
+        cadenaNueva[j] = cadena[i];
+        i++;
+        j++;
+    }
+
+    return cadenaNueva;
+}
