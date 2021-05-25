@@ -5,7 +5,7 @@
 int main()
 {
     int accion, posicion;
-    char cadena[], cadena2[];
+    char cadena[20], cadena2[20];
     char caracter;
     
     printf("==================================\n");
