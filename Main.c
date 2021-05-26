@@ -15,51 +15,57 @@ int main()
     do {
         printf("\nMenu :\n");
         printf("1- Calcular y retornar la longitud de una cadena\n");
-        printf("2- Convertir una cadena de digitos en su equivalente num√©rico\n");
+        printf("2- Convertir una cadena de digitos en su equivalente numÈico\n");
         printf("3- Convertir una cadena de caracteres a mayuscula\n");
-        printf("4- Eliminar de una cadena dada todas las ocurrencias de un car√°cter dado\n");
+        printf("4- Eliminar de una cadena dada todas las ocurrencias de un car·cter dado\n");
         printf("5- Concatenar al final de la primer cadena una segunda cadena\n");
-        printf("6- Insertar un caracter en una posici√≥n determinada\n");
+        printf("6- Insertar un caracter en una posiciÛn determinada\n");
         printf("7- Terminar\n");
         printf("\nElija una accion :\n");
         scanf("%i", &accion);
         switch (accion)
         {
             case 1: printf("Ingrese una cadena\n");
-                    scanf(cadena);
-                    printf("largo de cadena :\t\n", largo(cadena));
+                    scanf("%s",cadena);
+                    printf("largo de cadena : %d\n", longitud(cadena));
                     break;
             case 2: printf("Ingrese una cadena\n");
-                    scanf("%c",cadena);
-                    printf("valor numerico de '%c' :\n", cadenaANumero(cadena));
+                    scanf("%s",cadena);
+                    printf("valor numerico : %d\n", cadenaANumero(cadena));
                     break;
             case 3: printf("Ingrese una cadena\n");
-                    scanf("%c",cadena);
-                    printf("upperCase de '%c' :\n", upperCase(cadena));
+                    scanf("%s",cadena);
+                    printf("upperCase : %s\n",cadena, upperCase(cadena));
                     break;
             case 4: printf("Ingrese una cadena\n");
-                    scanf(cadena);
+                    scanf("%s",cadena);
                     printf("Ingrese una caracter\n");
-                    scanf(caracter);
-                    printf("Cadena con concurrencias eliminadas: \n", eliminar(cadena,caracter));
+                    scanf("%s",cadena2);
+                    eliminar(cadena,cadena2);
+                    printf("Cadena con concurrencias eliminadas: %s \n", cadena);
                     break;
             case 5: printf("Ingrese una cadena\n");
-                    scanf(cadena);
+                    scanf("%s",cadena);
                     printf("Ingrese una cadena\n");
-                    scanf(cadena2);
-                    printf("Cadena concatenada:\n", concatena(cadena, cadena2));
+                    scanf("%s",cadena2);
+                    concatena(cadena, cadena2);
+                    printf("Cadena concatenada: %s\n",cadena);
                     break;
             case 6: printf("Ingrese una cadena\n");
-                    scanf(cadena);
+                    scanf("%s",cadena);
                     printf("Ingrese una caracter\n");
-                    scanf(caracter);
+                    scanf("%c",&caracter); //la primera vez que lee encuentra el caracter '\n' de la lectura enterior y se cierra instantaneamente
+                    scanf("%c",&caracter);
                     printf("Ingrese una posicion\n");
-                    scanf(posicion);
-                    printf("Cadena con caracter insertado:\n", insertarCaracter(cadena,caracter,posicion));
+                    scanf("%d",&posicion);
+                    printf("Cadena con caracter insertado: %s\n", insertarCaracter(cadena,caracter,posicion));
                     break;
             case 7: printf("Fin del ejercicio :)\n");
                     break;
         }
+        // los comandos system() solo funcionan en windows (cmd o powershell)
+        system("pause");
+        system("cls");
     
     } while (accion != 7);
     

@@ -15,7 +15,6 @@ int potencia(int a, int b)
 int longitud(char cadena[])
 {
     int i;
-
     for (i = 0; cadena[i] != '\0'; i++)
         ;
     return i;
@@ -24,9 +23,9 @@ int longitud(char cadena[])
 long cadenaANumero(char c[])
 {
     long sumador = 0, largoCadena = longitud(c);
-    for (int i = 0; i < largoCadena; i++)
+    for (int i = 0, j = 0; i < largoCadena; i++)
     {
-        sumador += (c[i] - 48) * potencia(10, largoCadena - i - 1); //el 48 es una manera de traducir de ASCII a numero, se ve horrible pero funciona ¯\_(ツ)_/¯
+        sumador += (c[i] - 48) * potencia(10, largoCadena - j - 1); //el 48 es una manera de traducir de ASCII a numero, se ve horrible pero funciona ¯\_(ツ)_/¯
     }
     return sumador;
 }
@@ -85,18 +84,18 @@ void concatena(char cadena1[], char cadena2[])
 
     for (i = 0; i < longitud(cadena2); i++)
     {
-
-        cadena1[longitud(cadena1) + 1 + i] = cadena2[i];
+        cadena1[j + i] = cadena2[i];
     }
+    cadena1[j + longitud(cadena2)] = 0; // agrega '\0' al final para que no siga leyendo indefinidamente
 }
 // f) Modificar la cadena dada con la inserción de un carácter dado en una posición determinada.
-char insertarCaracter(char cadena, char caracter, int posicion)
+char* insertarCaracter(char* cadena, char caracter, int posicion)
 {
     char *cadenaNueva;
     int i = 0;
     int j = 0;
 
-    while (i < largo(cadena))
+    while (i < longitud(cadena))
     {
         if (i == posicion)
         {
