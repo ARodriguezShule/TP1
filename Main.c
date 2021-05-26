@@ -7,11 +7,11 @@ int main()
     int accion, posicion;
     char cadena[20], cadena2[20];
     char caracter;
-    
+
     printf("==================================\n");
     printf("Ejercicios Trabajo practico 1\n");
     printf("==================================\n");
-    
+
     do {
         printf("\nMenu :\n");
         printf("1- Calcular y retornar la longitud de una cadena\n");
@@ -28,39 +28,37 @@ int main()
             case 1: printf("Ingrese una cadena\n");
                     scanf(cadena);
                     printf("largo de cadena :\t\n", largo(cadena));
-                    break;
+            break;
             case 2: printf("Ingrese una cadena\n");
                     scanf("%c",cadena);
                     printf("valor numerico de '%c' :\n", cadenaANumero(cadena));
-                    break;
+            break;
             case 3: printf("Ingrese una cadena\n");
                     scanf("%c",cadena);
                     printf("upperCase de '%c' :\n", upperCase(cadena));
-                    break;
+            break;
             case 4: printf("Ingrese una cadena\n");
                     scanf(cadena);
                     printf("Ingrese una caracter\n");
-                    scanf(caracter);
+                    scanf("%c", &caracter);
                     printf("Cadena con concurrencias eliminadas: \n", eliminar(cadena,caracter));
-                    break;
+            break;
             case 5: printf("Ingrese una cadena\n");
                     scanf(cadena);
                     printf("Ingrese una cadena\n");
                     scanf(cadena2);
                     printf("Cadena concatenada:\n", concatena(cadena, cadena2));
-                    break;
+            break;
             case 6: printf("Ingrese una cadena\n");
                     scanf(cadena);
                     printf("Ingrese una caracter\n");
-                    scanf(caracter);
+                    scanf("c", &caracter);
                     printf("Ingrese una posicion\n");
-                    scanf(posicion);
+                    scanf("%i", &posicion);
                     printf("Cadena con caracter insertado:\n", insertarCaracter(cadena,caracter,posicion));
-                    break;
-            case 7: printf("Fin del ejercicio :)\n");
-                    break;
+            break;
         }
-    
+
     } while (accion != 7);
-    
+
 }
