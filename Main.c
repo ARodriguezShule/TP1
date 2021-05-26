@@ -7,21 +7,21 @@ int main()
     int accion, posicion;
     char cadena[20], cadena2[20];
     char caracter;
-    
+
     printf("==================================\n");
     printf("Ejercicios Trabajo practico 1\n");
     printf("==================================\n");
-    
+
     do {
         printf("\nMenu :\n");
         printf("1- Calcular y retornar la longitud de una cadena\n");
-        printf("2- Convertir una cadena de digitos en su equivalente numéico\n");
+        printf("2- Convertir una cadena de digitos en su equivalente numerico\n");
         printf("3- Convertir una cadena de caracteres a mayuscula\n");
-        printf("4- Eliminar de una cadena dada todas las ocurrencias de un carácter dado\n");
+        printf("4- Eliminar de una cadena dada todas las ocurrencias de un caracter dado\n");
         printf("5- Concatenar al final de la primer cadena una segunda cadena\n");
         printf("6- Insertar un caracter en una posición determinada\n");
         printf("7- Terminar\n");
-        printf("\nElija una accion :\n");
+        printf("\nElija una accion\n");
         scanf("%i", &accion);
         switch (accion)
         {
@@ -29,7 +29,7 @@ int main()
                     scanf("%s",cadena);
                     printf("largo de cadena : %d\n", longitud(cadena));
                     break;
-            case 2: printf("Ingrese una cadena\n");
+            case 2: printf("Ingrese una cadena de digitos\n");
                     scanf("%s",cadena);
                     printf("valor numerico : %d\n", cadenaANumero(cadena));
                     break;
@@ -60,13 +60,11 @@ int main()
                     scanf("%d",&posicion);
                     printf("Cadena con caracter insertado: %s\n", insertarCaracter(cadena,caracter,posicion));
                     break;
-            case 7: printf("Fin del ejercicio :)\n");
-                    break;
         }
         // los comandos system() solo funcionan en windows (cmd o powershell)
-        system("pause");
-        system("cls");
+        //system("pause");
+        //system("cls");
     
     } while (accion != 7);
-    
+
 }

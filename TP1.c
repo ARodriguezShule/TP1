@@ -23,9 +23,9 @@ int longitud(char cadena[])
 long cadenaANumero(char c[])
 {
     long sumador = 0, largoCadena = longitud(c);
-    for (int i = 0, j = 0; i < largoCadena; i++)
+    for (int i = 0; i < largoCadena; i++)
     {
-        sumador += (c[i] - 48) * potencia(10, largoCadena - j - 1); //el 48 es una manera de traducir de ASCII a numero, se ve horrible pero funciona ¯\_(ツ)_/¯
+        sumador += (c[i] - 48) * potencia(10, largoCadena - i - 1); //el 48 es una manera de traducir de ASCII a numero, se ve horrible pero funciona ¯\_(ツ)_/¯
     }
     return sumador;
 }
