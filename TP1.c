@@ -39,7 +39,7 @@ char *upperCase(unsigned char s[])
             s[i] -= 32;
         }
     }
-    return s;
+    return s; //no tiene sentido devolver, se modificó el parámetro
 }
 
 // d) Eliminar de una cadena dada todas las ocurrencias de un carácter dado.
